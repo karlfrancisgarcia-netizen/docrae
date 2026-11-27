@@ -38,6 +38,31 @@
 @media(min-width:721px) and (max-width:900px){.hero-art{height:500px}.hero-art img{height:610px}.hero-lead{font-size:15px}.hero h1{font-size:52px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
+<style id="mobile-hero-visibility-fix">
+/* Keep the hero and photo fully visible on smaller screens. */
+@media (max-width:720px) {
+  html { scroll-padding-top: 92px; }
+  #home { scroll-margin-top: 84px; }
+  .site-header { top:0; }
+  .hero-inner { padding-top: 29px; }
+  .hero h1 { line-height: 1.13; overflow: visible; }
+  .hero-art { height: 275px; margin-top: 12px; overflow: hidden; }
+  .hero-art img {
+    height: 370px;
+    top: 0;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hero-art:before { height: 82%; }
+  .hero-art:after { height: 84%; }
+}
+@media (max-width:380px) {
+  .hero-art { height: 245px; }
+  .hero-art img { height: 340px; top: 0; bottom: auto; }
+  .hero h1 { font-size: clamp(36px,10.6vw,41px); }
+}
+</style>
 </head>
 <body>
 <svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
